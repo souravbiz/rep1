@@ -527,7 +527,7 @@ def write_interfaces_tor(**kwargs):
     breakout = str(kwargs['breakout_ports_num']).split(dividing_factor)
     breakout_port_list = range(int(breakout[0]), int(breakout[1]) + 1)
     kwargs['file'].write("\ninterface breakout module 1 port {}-{} map 10g-4x\n".format(breakout_port_list[0],
-                                                                                    breakout_port_list[-1]))
+                                                                                        breakout_port_list[-1]))
     for eth in eth_names:
         if count not in breakout_port_list:
             kwargs['file'].write("\ninterface ethernet 1/{}\n".format(count))
@@ -1043,6 +1043,6 @@ def browsefunc():
 btn1 = Button(top, text='Browse', bg='brown', fg='white', command=browsefunc).grid(row=27, column=3, sticky=W)
 Entry(top, bg='white', relief=SUNKEN, width=50, textvariable=port_map_location).grid(row=27, column=1, columnspan=2)
 
-btn2 = Button(top, text='Generate Scripts', bg='brown', fg='white', command=submit).grid(row=27, column=7, columnspan=2)
+btn2 = Button(top, text='Generate Scripts', bg='brown', fg='white', command=submit).grid(row=28, column=7, columnspan=2)
 
 top.mainloop()
